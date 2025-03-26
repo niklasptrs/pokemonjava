@@ -1,5 +1,4 @@
-
-
+import java.util.Scanner;
 public class Pokemon
 {
     String typ1, typ2;
@@ -16,6 +15,8 @@ public class Pokemon
     int angent1, angent2;
     // Namen der Attacken
     String ang1, ang2, ang3, ang4, ang5, ang6, ang7, ang8;
+    //  1=1.angriff
+    int angn;
     // Schaden der jeweiligen Angriffe
     int dang1, dang2, dang3, dang4, dang5, dang6, dang7, dang8;
     // Angriffspunkte der jeweiligen Angriffe
@@ -27,12 +28,12 @@ public class Pokemon
 
     public Pokemon()
     {
-        
+
     }
 
     public void entwickeln(){
         if (level >= entwicklung1 && entwicklungsstand == 0){
-            
+
             System.out.println(name + " wird zu " + entname1);
             name = entname1;
             entwicklungsstand = 1;
@@ -49,15 +50,14 @@ public class Pokemon
             System.out.println("Angriff: "+angent2+" Leben: "+lebenent2);
         }
         else if(level < entwicklung1 || level < entwicklung2  && entwicklungsstand !=1){
-        
+
             System.out.println("Level zu gering um zu entwickeln");
         }
         else if (entwicklungsstand == 2){
             System.out.println(name + " hat maximales Level erreicht!");
         }
     }
-    
-        
+
     public void lvl100(){
         level =+100;
         if (ang1 != null && level >= angu1 && uang1 == false){
@@ -109,4 +109,15 @@ public class Pokemon
             System.out.println("");
         }
     }
+
+    public void angreifen(){
+        
+        Scanner scanner = new Scanner(System.in);
+        int angn = Integer.parseInt(scanner.nextLine());
+        
+        
+        if(angn == 1){
+            
+    }
+}
 }
