@@ -1,0 +1,18 @@
+#Wed Mar 26 20:44:37 CET 2025
+bluej.teamsettings.git.branch=
+bluej.teamsettings.git.protocol=https
+bluej.teamsettings.git.repositoryPrefix=/niklasptrs/pokemonjava.git
+bluej.teamsettings.git.server=github.com
+bluej.teamsettings.ignore1=.*\\.class
+bluej.teamsettings.ignore2=bluej\\.pkh
+bluej.teamsettings.ignore3=team\\.defs
+bluej.teamsettings.ignore4=.*\\.ctxt
+bluej.teamsettings.ignore5=.*\\~
+bluej.teamsettings.ignore6=.*\\\#
+bluej.teamsettings.ignore7=.*\\\#backup
+bluej.teamsettings.ignore8=\\.DS_Store
+bluej.teamsettings.savedpwd=+bTXDl/5av2rwZg3z0M4hA\=\=
+bluej.teamsettings.user=niklasptrs
+bluej.teamsettings.vcs=git
+bluej.teamsettings.yourEmail=niklas.p.2007@gmail.com
+bluej.teamsettings.yourName=niklasptrs
