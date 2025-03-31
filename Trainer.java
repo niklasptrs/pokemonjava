@@ -6,7 +6,7 @@ public class Trainer
     Taubsi taubsi1;
 
     boolean hatGlumanda;
-    boolean hatGolbit;
+    boolean hatKleinstein;
     boolean hatTaubsi;
 
     int pokemon;
@@ -69,8 +69,10 @@ public class Trainer
             schreiben("Dein eigener Legendenpfad wartet auf dich!");
             System.out.println("");
 
+
         }
 
+        startpokemon();
         /*
         System.out.println("/==============================================\\");
         System.out.println("||  ____       _                              ||");
@@ -107,10 +109,14 @@ public class Trainer
     }
 
     public void pokemonleveln(){
-        System.out.println("Welches Pokemon möchtest du leveln?");
-        System.out.println("Pokemon 1 = "+glumanda1.name);
-        System.out.println("Pokemon 2 = "+taubsi1.name);
-        System.out.println("Pokemon 3 = "+kleinstein1.name);
+        schreiben("Welches Pokemon möchtest du leveln?");
+        System.out.println("");
+        schreiben("Pokemon 1 = "+glumanda1.name);
+        System.out.println("");
+        schreiben("Pokemon 2 = "+taubsi1.name);
+        System.out.println("");
+        schreiben("Pokemon 3 = "+kleinstein1.name);
+        System.out.println("");
 
         Scanner scanner = new Scanner(System.in);
         int pokemon = Integer.parseInt(scanner.nextLine());
@@ -146,4 +152,64 @@ public class Trainer
 
         }
     }
+
+    private void startpokemon(){
+
+        schreiben("Du darfst nun eins von drei Startpokemon wählen");
+        System.out.println("");
+        schreiben("Glumanda ist ein Feuerpokemon und kann fliegen, wähle es mit 1 aus!");
+        System.out.println("");
+        schreiben("Du kannst auch Taubsi wählen, Taubsi ist ein normales Pokemon und kann auch fliegen, wähle es mit 2 aus!");
+        System.out.println("");
+        schreiben("Alternativ steht dir auch Kleinstein zur Vertfügung, ein Steinpokemon, wähle Kleinstein mit 3 aus!");
+        System.out.println("");
+
+        Scanner scanner = new Scanner(System.in);
+        int abfrage = Integer.parseInt(scanner.nextLine());
+
+        if (abfrage == 1){
+            schreiben("Du hast Glumanda ausgewählt!");
+            System.out.println("");
+            hatGlumanda = true;
+            hatTaubsi = false;
+            hatKleinstein = false;
+
+        }
+        if (abfrage == 2){
+            schreiben("Du hast Taubsi ausgewählt!");
+            System.out.println("");
+            hatTaubsi = true;
+            hatGlumanda = false;
+            hatKleinstein = false;
+            
+        }
+        if (abfrage == 3){
+            schreiben("Du hast Kleinstein ausgewählt!");
+            System.out.println("");
+            hatKleinstein = true;
+            hatTaubsi = false;
+            hatGlumanda = false;
+        }
+        
+        
+        
+    }
+
+    public void angreifen(){
+        schreiben("Mit welchem Pokemon möchtest du kämpfen ?");
+        System.out.println("");
+        
+        
+        Scanner scanner = new Scanner(System.in);
+        int pokemon = Integer.parseInt(scanner.nextLine());
+        
+        
+        schreiben("Welchen Angriff möchtest du wählen, wähle mit den Zahlen hinter dem Angriffnamen !");
+        System.out.println("");
+        
+        
+    }
+    
+    
+    
 }
