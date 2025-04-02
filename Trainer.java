@@ -4,6 +4,7 @@ public class Trainer
     Glumanda glumanda1;
     Kleinstein kleinstein1;
     Taubsi taubsi1;
+    Raupy raupy1;
 
     boolean hatGlumanda;
     boolean hatKleinstein;
@@ -19,6 +20,7 @@ public class Trainer
         glumanda1 = new Glumanda();
         taubsi1 = new Taubsi();
         kleinstein1 = new Kleinstein();
+        raupy1 = new Raupy();
 
         System.out.println("/====================================================================\\");
         System.out.println("||########---#######--##----##-########-##-----##--#######--##----##||");
@@ -69,9 +71,7 @@ public class Trainer
             schreiben("Dein eigener Legendenpfad wartet auf dich!");
             System.out.println("");
 
-
         }
-
         startpokemon();
         /*
         System.out.println("/==============================================\\");
@@ -90,11 +90,12 @@ public class Trainer
         System.out.println("Pokemon 1 = "+glumanda1.name);
         System.out.println("Pokemon 2 = "+taubsi1.name);
         System.out.println("Pokemon 3 = "+kleinstein1.name);
+        System.out.println("Pokemon 4 = "+raupy1.name);
 
         Scanner scanner = new Scanner(System.in);
         int pokemon = Integer.parseInt(scanner.nextLine());
 
-        if (pokemon >= 4){
+        if (pokemon >= 5){
             System.out.println("Ungültiger Wert!"); 
         }
         else if (pokemon == 1){
@@ -105,6 +106,9 @@ public class Trainer
         }
         else if (pokemon == 3){
             kleinstein1.entwickeln();
+        }
+        else if (pokemon == 4){
+            raupy1.entwickeln();
         }
     }
 
@@ -121,7 +125,7 @@ public class Trainer
         Scanner scanner = new Scanner(System.in);
         int pokemon = Integer.parseInt(scanner.nextLine());
 
-        if (pokemon >= 4){
+        if (pokemon >= 5){
             System.out.println("Ungültiger Wert!"); 
         }
         else if (pokemon == 1){
@@ -134,6 +138,10 @@ public class Trainer
         }
         else if (pokemon == 3){
             kleinstein1.lvl100();
+            System.out.println("Erfolgreich gelevelt.");
+        }
+        else if(pokemon == 4){
+            raupy1.lvl100();
             System.out.println("Erfolgreich gelevelt.");
         }
 
@@ -181,7 +189,7 @@ public class Trainer
             hatTaubsi = true;
             hatGlumanda = false;
             hatKleinstein = false;
-            
+
         }
         if (abfrage == 3){
             schreiben("Du hast Kleinstein ausgewählt!");
@@ -190,26 +198,127 @@ public class Trainer
             hatTaubsi = false;
             hatGlumanda = false;
         }
-        
-        
-        
+
+    }
+
+    public void pokedexaufrufen(){
+        schreiben("Zu welchem Pokemon möchtest du mehr wissen?");
+        System.out.println("");
+        schreiben("Glumanda 1");
+        System.out.println("");
+        schreiben("Taubsi 2");
+        System.out.println("");
+        schreiben("Kleinstein 3");
+
+        Scanner scanner = new Scanner(System.in);
+        int pokemon = Integer.parseInt(scanner.nextLine());
+
+        if (pokemon == 1){
+            System.out.println("Name: "+glumanda1.name);
+            System.out.println("Leben: "+glumanda1.leben);
+            System.out.println("Level: "+glumanda1.level);
+            
+            listanggl();
+
+        }
     }
 
     public void angreifen(){
         schreiben("Mit welchem Pokemon möchtest du kämpfen ?");
         System.out.println("");
-        
-        
+
+        schreiben("Wähle Glumanda mit 1, Taubsi mit 2 oder Kleinstein mit 3.");
+        System.out.println("");
+
         Scanner scanner = new Scanner(System.in);
         int pokemon = Integer.parseInt(scanner.nextLine());
-        
-        
+
+        if (pokemon == 1 && hatGlumanda){
+            schreiben("Du hast Glumanda ausgewählt!");
+            System.out.println("");
+            pokemon = 1;
+
+        }
+        else if (pokemon ==1 && !hatGlumanda){
+            schreiben("Du hast Glumanda noch nicht gefangen, wähle ein anderes Pokemon!");
+            System.out.println("");
+            angreifen();
+        }
+        if (pokemon == 2 && hatTaubsi){
+            schreiben("Du hast Taubsi ausgewählt!");
+            System.out.println("");
+            pokemon = 2;
+
+        }
+        else if (pokemon ==2 && !hatTaubsi){
+            schreiben("Du hast Taubsi noch nicht gefangen, wähle ein anderes Pokemon!");
+            System.out.println("");
+            angreifen();
+        }
+        if (pokemon == 3 && hatKleinstein){
+            schreiben("Du hast Kleinstein ausgewählt!");
+            System.out.println("");
+            pokemon = 3;
+        }
+        else if (pokemon == 3 && !hatKleinstein){
+            schreiben("Du hast Kleinstein noch nicht gefangen, wähle ein anderes Pokemon!");
+            System.out.println("");
+            angreifen();
+        }
+
         schreiben("Welchen Angriff möchtest du wählen, wähle mit den Zahlen hinter dem Angriffnamen !");
         System.out.println("");
-        
-        
+
+        if (pokemon == 1){
+            listanggl();
+        }
+
     }
-    
-    
-    
+
+    private void listanggl(){
+        System.out.println(glumanda1.ang1 + " 1");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(glumanda1.ang2 + " 2");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(glumanda1.ang3 + " 3");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(glumanda1.ang4 + " 4");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(glumanda1.ang5 + " 5");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(glumanda1.ang6 + " 6");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+    }
+
+    private void listangta(){
+        System.out.println(taubsi1.ang1 + " 1");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(taubsi1.ang2 + " 2");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(taubsi1.ang3 + " 3");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+
+    }
+
+    private void listangkl(){
+        System.out.println(kleinstein1.ang1 + " 1");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(kleinstein1.ang2 + " 2");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(kleinstein1.ang3 + " 3");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(kleinstein1.ang4 + " 4");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(kleinstein1.ang5 + " 5");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+
+    }
+
+    private void listangra(){
+        System.out.println(raupy1.ang1 + " 1");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+        System.out.println(raupy1.ang2 + " 2");
+        System.out.println("»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»");
+
+    }
 }
